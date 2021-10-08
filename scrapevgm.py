@@ -42,11 +42,12 @@ def get_mid(base_path, link, location, num_pages, this_idx):
             char = chr(int(link_href[idx + 1] + link_href[idx + 2], 16))
 
             link_href = link_href[:idx] + char + link_href[(idx + 3):]
+            print(link_href)
     except Exception as e:
         pass
 
-    file_ext = link.get('href').split('.')[-1]
-    file_name = link.get('href').split('/')[-1]
+    file_ext = link_href.split('.')[-1]
+    file_name = link_href.split('/')[-1]
 
     if num_pages != False:
         # Prepend num (so no dupes can happen) if newly-submitted only
